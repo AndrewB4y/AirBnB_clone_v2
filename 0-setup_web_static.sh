@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# setting up a web server for a web_Static deployment
+# Setting up a web server for a web_Static deployment
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo mkdir -p /data
-sudo mkdir -p /data/web_static
-sudo mkdir -p /data/web_static/release
-sudo mkdir -p /data/web_static/share
-sudo mkdir -p /data/web_static/releases/test
+mkdir -p /data
+mkdir -p /data/web_static
+mkdir -p /data/web_static/releases
+mkdir -p /data/web_static/share
+mkdir -p /data/web_static/releases/test
 echo "<html>
     <head>
     </head>
