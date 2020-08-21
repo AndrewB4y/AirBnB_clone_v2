@@ -23,11 +23,11 @@ def do_deploy(archive_path):
         full_target = "/data/web_static/releases/{}".format(name_target)
         run('mkdir -p {}'.format(full_target))
         run("tar -xzf /tmp/{} -C {}".format(a_name, full_target))
-        run('rm /tmp/{}')
+        run('rm /tmp/{}'.format(a_name))
         run('mv {}/web_static/* {}/'.format(full_target,full_target))
         run('rm -Rf {}/web_static'.format(full_target))
         run('rm -Rf /data/web_static/current')
-        run('ln -s {} /data/web_static/current')
+        run('ln -s {} /data/web_static/current'.format(full_target))
         return True
     except:
         return False
