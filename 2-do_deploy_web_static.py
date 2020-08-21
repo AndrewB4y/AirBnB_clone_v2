@@ -28,3 +28,6 @@ def do_deploy(archive_path):
         run('rm -Rf {}/web_static'.format(full_target))
         run('rm -Rf /data/web_static/current')
         run('ln -s {} /data/web_static/current')
+        return True
+    except:
+        return False
