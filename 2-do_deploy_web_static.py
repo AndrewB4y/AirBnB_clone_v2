@@ -2,7 +2,7 @@
 
 """ pack_web_static module """
 
-from fabric.api import run, put
+from fabric.api import run, put, env
 from datetime import datetime
 import os
 
