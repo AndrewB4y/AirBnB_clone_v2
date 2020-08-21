@@ -19,12 +19,12 @@ def do_deploy(archive_path):
     try:
         a_name = archive_path.split('/')[-1]
         put('{}'.format(archive_path), '/tmp/{}'.format(a_name))
-        name_target =  a_name.split('.')[0]
+        name_target = a_name.split('.')[0]
         full_target = "/data/web_static/releases/{}".format(name_target)
         run('mkdir -p {}'.format(full_target))
         run("tar -xzf /tmp/{} -C {}".format(a_name, full_target))
         run('rm /tmp/{}'.format(a_name))
-        run('mv {}/web_static/* {}/'.format(full_target,full_target))
+        run('mv {}/web_static/* {}/'.format(full_target, full_target))
         run('rm -Rf {}/web_static'.format(full_target))
         run('rm -Rf /data/web_static/current')
         run('ln -s {} /data/web_static/current'.format(full_target))
