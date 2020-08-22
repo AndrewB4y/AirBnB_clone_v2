@@ -2,11 +2,12 @@
 
 """ pack_web_static module """
 
-from fabric.api import run, put, env
+from fabric.api import run, put, env, local
 from datetime import datetime
 import os
 
 env.hosts = ['34.75.228.249', '35.231.205.149']
+
 
 def do_pack():
     """ do_pack function
