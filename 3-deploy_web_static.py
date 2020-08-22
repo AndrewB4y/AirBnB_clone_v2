@@ -8,6 +8,7 @@ import os
 
 env.hosts = ['34.75.228.249', '35.231.205.149']
 
+
 def do_pack():
     """ do_pack function
     Generates a .tgz archive from the contents of the 'web_static'
@@ -21,7 +22,7 @@ def do_pack():
         local('tar -cvzf {} web_static'.format(file_path))
         return file_path
     except:
-        return none
+        return None
 
 
 def do_deploy(archive_path):
@@ -46,3 +47,11 @@ def do_deploy(archive_path):
         return True
     except:
         return False
+
+
+def deploy():
+    archive_path = do_pack()
+    if archive_path is None:
+        return False
+
+    return do_deploy(archive_path)
