@@ -26,7 +26,7 @@ class State(BaseModel, Base):
             our_cts = storage.all(City)
             state_cts = []
             for city in our_cts.values():
-                if self.id == city.id:
+                if self.id == city.state_id:
                     state_cts.append(city)
 
             return state_cts
