@@ -13,6 +13,7 @@ app = Flask(__name__)
 def rm_curr_SQLAlchemy(error):
     storage.close()
 
+
 @app.route('/states_list', strict_slashes=False)
 def disp_states():
     """ display a HTML page with all the states stored """
