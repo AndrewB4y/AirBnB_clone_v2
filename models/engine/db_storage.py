@@ -76,7 +76,7 @@ class DBStorage:
         """
         if obj:
             self.__session.delete(obj)
-"""
+            """
             _cls = obj.__class__
             print(_cls)
             my_query = self.__session.query(_cls) \
@@ -84,4 +84,12 @@ class DBStorage:
                                      .first()
             if my_query:
                 self.__session.delete(my_query)
-"""
+            """
+
+    def close(self):
+        """
+        call remove() method on the private session attribute
+        self.__session
+        
+        """
+        DBStorage.__session.close()
