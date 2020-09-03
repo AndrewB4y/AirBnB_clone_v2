@@ -4,12 +4,12 @@
 <head>
         <title>AirBnB clone</title>
 
-        <link rel="shortcut icon" href="images/icon.ico">
+        <link rel="shortcut icon" href="../static/images/icon.png">
 
-        <link rel="stylesheet" href="styles/4-common.css" />
-        <link rel="stylesheet" href="styles/3-header.css" />
-        <link rel="stylesheet" href="styles/3-footer.css" />
-        <link rel="stylesheet" href="styles/6-filters.css" />
+        <link rel="stylesheet" href="../static/styles/4-common.css" />
+        <link rel="stylesheet" href="../static/styles/3-header.css" />
+        <link rel="stylesheet" href="../static/styles/3-footer.css" />
+        <link rel="stylesheet" href="../static/styles/6-filters.css" />
 </head>
 
 <body>
@@ -24,10 +24,10 @@
                                 <h4>&nbsp;</h4>
                                 <ul class="popover">
                                         {% for state in states|sort(attribute="name") %}
-                                        <li> {{ state.id }}: <B>{{ state.name }}</B>
+                                        <li><h2>{{ state.name }}</h2>
                                                 <ul>
                                                         {% for city in state.cities|sort(attribute="name") %}
-                                                        <li> {{ city.id }}: <B>{{ city.name }}</B></li>
+                                                        <li><h4>{{ city.name }}</h4></li>
                                                         {% endfor %}
                                                 </ul>
                                         </li>
@@ -38,18 +38,9 @@
                                 <h3>Amenities</h3>
                                 <h4>&nbsp;</h4>
                                 <ul class="popover">
-                                        <li>
-                                                <h4>Internet</h4>
-                                        </li>
-                                        <li>
-                                                <h4>TV</h4>
-                                        </li>
-                                        <li>
-                                                <h4>Kitchen</h4>
-                                        </li>
-                                        <li>
-                                                <h4>Iron</h4>
-                                        </li>
+				        {% for amenity in amenities|sort(attribute="name") %}
+                                                <li><h4>{{ amenity.name }}</h4></li>
+                                        {% endfor %}
                                 </ul>
                         </div>
 
